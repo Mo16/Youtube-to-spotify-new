@@ -4,6 +4,17 @@ import urllib.request
 import youtube_dl
 from googleapiclient.discovery import build
 
+def main():
+    while True:
+        choice = input("What would you like to do:\n1) Add a playlist\n2) Add a Song\n3) Quit\n>>> ")
+        if choice == '1':
+            youtube_playlist()
+        elif choice == '2':
+            youtube_video()
+        elif choice == '3':
+            quit()
+        else:
+            print("Try again")
 
 def youtube_playlist():
     songs_added = []
@@ -92,18 +103,6 @@ def spotify_add(song_id):
         }
     )
 
-
-def main():
-    while True:
-        choice = input("What would you like to do:\n1) Add a playlist\n2) Add a Song\n3) Quit\n>>> ")
-        if choice == '1':
-            youtube_playlist()
-        elif choice == '2':
-            youtube_video()
-        elif choice == '3':
-            quit()
-        else:
-            print("Try again")
 
 
 def adding_choice(songs_not_added):
